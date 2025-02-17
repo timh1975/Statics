@@ -1,0 +1,33 @@
+name: "GreenPython CodeQL"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: python
+        packs:
+          - timh1975/greenpython@v1.0
+    - nmae: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+            
+    
