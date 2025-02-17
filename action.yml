@@ -1,0 +1,6 @@
+name: "Green Python"
+description: "demo for Green Python"
+
+runs:
+  using: node22
+  main: src/*.*
