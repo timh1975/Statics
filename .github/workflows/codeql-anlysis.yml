@@ -27,12 +27,14 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install NPM Package
+      run: npm install -g @timh1975/greenpython
+      
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
         languages: python
-        packs: "@timh1975/greenpython@1.0.0"
+
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-            
     
