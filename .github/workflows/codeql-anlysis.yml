@@ -27,8 +27,10 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Authenticate with GitHub Packages
-      run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+    - name: Force npm to use npmjs.com
+      run: npm config set registry https://registry.npmjs.com
+
+
 
     - name: Install NPM Package
       run: npm install -g @timh1975/greenpython@v1.0.0
