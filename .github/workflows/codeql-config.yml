@@ -22,9 +22,9 @@ jobs:
       uses: actions/checkout@v3
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
-      with:
-
-       packs: ghcr.io/timh1975/greenpython@0.0.4
+      
+    - name: Download CodeQL Pack
+      run: codeql pack download timh1975/greenpython:latest        
 
 
     - name: Perform CodeQL Analysis
