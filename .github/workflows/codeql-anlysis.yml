@@ -43,6 +43,9 @@ jobs:
       with:
         languages: python
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+    - name: Set up GreenPython CodeQL Action
+      uses: tim1975/greenpython@v1.0.2
+      with:
+        python-version: '3.x'
+        node-version: '22'
     
