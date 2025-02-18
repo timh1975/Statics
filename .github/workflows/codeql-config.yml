@@ -24,7 +24,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
 
-       packs: timh1975/greenpython@v0.0.5
+       packs: timh1975/greenpython@0.0.5
 
 
     - name: Perform CodeQL Analysis
