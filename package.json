@@ -16,5 +16,8 @@
   "main": "\\src\\app.py",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "greenpython": "^1.0.3"
   }
 }
