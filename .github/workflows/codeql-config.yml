@@ -1,5 +1,3 @@
-# Configuration file for CodeQL analysis
-
 name: "CodeQL"
 
 on:
@@ -17,16 +15,17 @@ jobs:
     strategy:
       matrix:
         language: [python]
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
-      
-    - name: Download CodeQL Pack
-      run: codeql pack download timh1975/greenpython:latest        
-
+      with:
+        languages: python
+        packs: ghcr.io/timh1975/greenpython@latest  # Use GreenPython CodeQL pack
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-  
+
