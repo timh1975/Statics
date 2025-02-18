@@ -43,9 +43,9 @@ jobs:
       with:
         languages: python
 
-    - name: Set up GreenPython CodeQL Action
-      uses: tim1975/greenpython@v1.0.2
+    - uses: github/codeql-action/init@v3
       with:
-        python-version: '3.x'
-        node-version: '22'
-    
+          config-file: ./.github/codeql/codeql-config.yml
+          queries: security-extended
+          packs: timh1975/greenpython@v1.0.2
+      
