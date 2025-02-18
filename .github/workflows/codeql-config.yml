@@ -23,7 +23,9 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
-        packs: https://registry.npmjs.org/greenpython/
+
+       packs: https://registry.npmjs.org/greenpython/
+
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
