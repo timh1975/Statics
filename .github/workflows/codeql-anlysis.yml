@@ -33,7 +33,7 @@ jobs:
 
 
     - name: Install NPM Package
-      run: npm install -g @timh1975/greenpython@v1.0.0
+      run: npm install -g @timh1975/greenpython@v1.0.1
       
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
