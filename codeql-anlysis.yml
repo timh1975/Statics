@@ -47,5 +47,5 @@ jobs:
       with:
           config-file: ./.github/codeql/codeql-config.yml
           queries: security-extended
-          packs: timh1975/greenpython@v1.0.2
+          packs: timh1975/greenpython@v1.0.6
       
