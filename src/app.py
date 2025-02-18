@@ -3,3 +3,6 @@ def hello():
 
 def goodbye():
     return "Goodbye, World!"
+
+def greet(name):
+    return f"Hello, {name}!"
