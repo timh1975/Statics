@@ -13,5 +13,9 @@ def farewell(name):
 def goodmorning():
     return "Good morning!"
 
+def goodevening():
+    return "Good evening!"
+
 def goodnight():
     return "Good night!"
+
