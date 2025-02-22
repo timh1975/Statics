@@ -24,7 +24,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: python
-        packs: ghcr.io/timh1975/greenpython@v0.0.1  # Use GreenPython CodeQL pack
+        packs: ghcr.io/timh1975/greenpython@0.0.1  # Use GreenPython CodeQL pack
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
