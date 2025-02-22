@@ -19,3 +19,6 @@ def goodevening():
 def goodnight():
     return "Good night!"
 
+def goodafternoon():
+    return "Good afternoon!"
+
