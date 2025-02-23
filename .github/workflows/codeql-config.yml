@@ -13,6 +13,7 @@ permissions:
   security-events: write
 
 
+
 jobs:
   analyze:
     name: Analyze
@@ -30,6 +31,7 @@ jobs:
       with:
         languages: python
         packs: timh1975/greenpython 
+        
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
