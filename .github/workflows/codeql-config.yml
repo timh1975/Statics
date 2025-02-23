@@ -29,8 +29,14 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: python
-        packs: timh1975/greenpython  # Use GreenPython CodeQL pack
+        packs: timh1975/greenpython 
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
+      with:
+        output: results.sarif
 
+    - name: Upload SARIF results
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: results.sarif
