@@ -1,4 +1,4 @@
-def hello():
+def helloWorld():
     return "Hello, World!"
 
 def goodbye():
