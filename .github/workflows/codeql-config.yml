@@ -37,7 +37,7 @@ jobs:
           output: results.sarif
     
     - name: Upload SARIF file as artifact (for download)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
             name: codeql-sarif-results
             path: results.sarif  # Uploads the SARIF file as an artifact
