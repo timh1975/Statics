@@ -31,6 +31,12 @@ jobs:
         languages: python
         packs: timh1975/greenpython  # Use GreenPython CodeQL pack
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+    - name: Run Custom CodeQL Queries
+      run: |
+          codeql database analyze codeql_db \
+            --format=sarif-latest \
+            --output=results.sarif \
+            "./CodeQL Packages/greenpython/queries/my_custom_query.ql"
+    
+        
 
