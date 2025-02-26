@@ -36,6 +36,8 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
           output: results.sarif
+    - name: Install sarif-tools
+      run: pip install sarif-tools
           
     - name: Convert SARIF to CSV (Python)
       run: |
