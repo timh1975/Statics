@@ -12,8 +12,6 @@ permissions:
   contents: read
   security-events: write
 
-
-
 jobs:
   analyze:
     name: Analyze
@@ -43,20 +41,30 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
             name: codeql-sarif-results
-            path: results.sarif  # Uploads the SARIF file as an artifact
+            path: results.sarif
 
-    - name: Convert SARIF to CSV
-      run: |
-              jq -r '.runs[].results[] | [.ruleId, .message.text, .locations[].physicalLocation.artifactLocation.uri, .locations[].physicalLocation.region.startLine] | @csv' results.sarif > results.csv
-      
-    - name: Upload SARIF file as artifact (for download)
-      uses: actions/upload-artifact@v4
-      with:
-              name: codeql-sarif-results
-              path: results.sarif  
-      
-    - name: Upload CSV file as artifact (for download)
-      uses: actions/upload-artifact@v4
-      with:
-              name: codeql-csv-results
-              path: results.csv
+  sarif-to-csv:
+    name: SARIF to CSV
+    runs-on: ubuntu-latest
+    needs: analyze  # Ensure analyze job completes first
+    steps:
+      - name: Download SARIF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: codeql-sarif-results
+          path: sarif-results
+
+      - name: Install jq and csvkit
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq csvkit
+
+      - name: Convert SARIF to CSV
+        run: |
+          jq -r '.runs[0].results[] | [.ruleId, .message.text, .locations[0].physicalLocation.artifactLocation.uri, .locations[0].physicalLocation.region.startLine] | @csv' sarif-results/results.sarif > codeql-results.csv
+
+      - name: Upload CSV as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-csv-results
+          path: codeql-results.csv
