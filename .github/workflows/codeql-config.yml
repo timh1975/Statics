@@ -36,9 +36,27 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
           output: results.sarif
+          
+
     
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
             name: codeql-sarif-results
             path: results.sarif  # Uploads the SARIF file as an artifact
+
+    - name: Convert SARIF to CSV
+      run: |
+              jq -r '.runs[].results[] | [.ruleId, .message.text, .locations[].physicalLocation.artifactLocation.uri, .locations[].physicalLocation.region.startLine] | @csv' results.sarif > results.csv
+      
+    - name: Upload SARIF file as artifact (for download)
+      uses: actions/upload-artifact@v4
+      with:
+              name: codeql-sarif-results
+              path: results.sarif  
+      
+    - name: Upload CSV file as artifact (for download)
+      uses: actions/upload-artifact@v4
+      with:
+              name: codeql-csv-results
+              path: results.csv
