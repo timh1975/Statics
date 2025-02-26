@@ -1,8 +1,9 @@
 name: "Green Python"
-description: "demo for Green Python"
-
-disable-default-queries: true
+description: "Demo for Green Python"
 
 runs:
   using: node22
   main: src/*.*
+
+queries:
+  disable-default-queries: true
