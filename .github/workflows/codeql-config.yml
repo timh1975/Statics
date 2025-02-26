@@ -40,7 +40,7 @@ jobs:
           
     - name: Verify python/example results
       run: |
-            jq '.runs[0].results[] | select(.ruleId == "python/example")' results.sarif
+            jq '.runs[0].results[].ruleId' results.sarif
   
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
