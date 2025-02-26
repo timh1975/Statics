@@ -37,11 +37,10 @@ jobs:
       with:
           output: results.sarif
           
-    - name: SARIF-to-CSV
-      uses: mr-sherman/sarif-to-csv@v2.4
-      with:
-        input-file: results.sarif
-        output-file: results.csv
+    - name: Convert SARIF to CSV (Python)
+      run: |
+         pip install sarif-tools
+         sarif-tools csv results.sarif > results.csv
     
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
