@@ -41,8 +41,8 @@ jobs:
           
     - name: Convert SARIF to CSV (Python)
       run: |
-         pip install sarif-tools
-         sarif-tools csv results.sarif > results.csv
+         python -m sarif_tools csv results.sarif > results.csv
+        
     
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
