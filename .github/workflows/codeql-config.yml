@@ -37,11 +37,7 @@ jobs:
       with:
           output: results.sarif 
           category: python/example
-          
-    - name: Verify python/example results
-      run: |
-            jq '.runs[0].results[].ruleId' results.sarif
-  
+            
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
