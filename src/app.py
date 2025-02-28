@@ -9,3 +9,5 @@ def goodbye():
 def goodmornign():
     return "Good morning, World!"
 
+def goodnight():
+    return 'Good night, World!'
