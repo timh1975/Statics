@@ -37,6 +37,14 @@ jobs:
       with:
           output: results.sarif 
           category: python/example
+
+    - name: Install sarif-filter
+      run: pip install -i https://test.pypi.org/simple/ sarif-filter==0.0.1
+    
+    - name: Filter SARIF file
+      run: python -m sarif-filter "{{ github.event.inputs.results_sarif }}"
+
+
             
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
