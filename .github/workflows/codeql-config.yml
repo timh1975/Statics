@@ -38,9 +38,7 @@ jobs:
           output: results.sarif 
           category: python/example
 
-  
-
-          
+         
     - name: Upload SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
@@ -51,8 +49,8 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
 
     - name: Debug SARIF file path
-      run: ls -l ${{ github.workspace }}/results.sarif/codeql-sarif-results
+      run: ls -l ${{ github.workspace }}/codeql-sarif-results
           
           
     - name: Filter SARIF file
-      run: sarif_filter "${{ github.workspace }}/results.sarif/codeql-sarif-results"
+      run: sarif_filter "${{ github.workspace }}/codeql-sarif-results"
