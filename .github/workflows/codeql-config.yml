@@ -42,7 +42,7 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter==0.0.3
     
     - name: Filter SARIF file
-      run: python3 -m sarif-filter "{{ github.event.inputs.results-sarif }}"
+      run: python3 -m sarif-filter "{{ github.event.inputs.results_sarif }}"
 
 
             
