@@ -42,7 +42,8 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
     
     - name: Filter SARIF file
-      run: sarif_filter "{{ github.event.inputs.results_sarif }}"
+      run: sarif_filter "${{ github.workspace }}/results.sarif"
+
 
 
             
