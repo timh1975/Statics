@@ -50,7 +50,6 @@ jobs:
 
     - name: Debug SARIF file path
       run: ls -l results.sarif
-          
-          
+                  
     - name: Filter SARIF file
-      run: sarif_filter codeql-sarif-results"
+      run: sarif_filter python.sarif
