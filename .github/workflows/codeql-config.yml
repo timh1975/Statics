@@ -49,7 +49,7 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
 
     - name: Debug SARIF file path
-      run: ls -l ${{ github.workspace }}/results.sarif
+      run: ls -l results.sarif
           
           
     - name: Filter SARIF file
