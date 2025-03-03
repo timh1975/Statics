@@ -44,6 +44,10 @@ jobs:
       with:
             name: codeql-sarif-results
             path: results.sarif  
+
+    - name: Debug file system
+      run: ls -l
+          
  
     - name: Install sarif-filter
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
@@ -55,6 +59,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: filtered-sarif-file
-        path: python.sarif.html
+        path: python.sarif.csv
 
         
