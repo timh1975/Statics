@@ -1,22 +1,11 @@
 import random
+a = []
+for x in range(1, 1000000):
+        random_number = random.randint(0,255)
+        a.insert(x, random_number)
 
-def helloWorld():
-    return "Hello, World!"
 
-def goodbye():
-    return "Goodbye, World!"
-
-def goodmornign():
-    return "Good morning, World!"
-
-def goodevening():
-    return "Good evening, World!"
-
-def goodnight():
-    return 'Good night, World!'
-
-def new():
-    return 'New function'
-
-def a():
-    return 'a'
+b = []
+for x in range(1, 1000000):
+        random_number = random.randint(0,255)
+        a.append(x, random_number)
