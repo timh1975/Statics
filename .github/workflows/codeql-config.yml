@@ -30,7 +30,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: python
-        packs: timh1975/greenpython@1.0.4
+        packs: timh1975/greenpython@1.0.3
         
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
@@ -48,17 +48,13 @@ jobs:
     - name: Install sarif-filter
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
 
-    - name: Debug SARIF file path
-      run: |
-        echo "ls ${{ github.workspace }}/results.sarif"
-
     - name: Filter SARIF file
-      run: sarif_filter${{ github.workspace }}/results.sarif/codeql-sarif-results
+      run: sarif_filter python.sarif
 
     - name: Upload filtered SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
-        name: codeql-sarif-results 
-        path: ${{ github.workspace }}/sarif_filter codeql-sarif-results
+        name: filtered-sarif-file
+        path: python.sarif.html
 
         
