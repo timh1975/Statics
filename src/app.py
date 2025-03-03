@@ -15,3 +15,5 @@ def goodevening():
 def goodnight():
     return 'Good night, World!'
 
+def new():
+    return 'New function'
