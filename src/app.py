@@ -17,3 +17,6 @@ def goodnight():
 
 def new():
     return 'New function'
+
+def a():
+    return 'a'
