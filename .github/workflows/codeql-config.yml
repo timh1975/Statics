@@ -100,8 +100,8 @@ jobs:
     - name: Show Energy Results
       uses: green-coding-solutions/eco-ci-energy-estimation@v4
       with:
-        task: display-measurement
-       
+        task: display-results
+               
     - name: Print total data
       run: |
           echo "total json: ${{ steps.total-measurement-step.outputs.data-total-json }}"    
