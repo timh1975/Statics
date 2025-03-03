@@ -52,7 +52,7 @@ jobs:
       run: pwd
 
     - name: Filter SARIF file
-      run: sarif_filter python.sarif "GreenPython" 
+      run: sarif_filter filtered-sarif-file "GreenPython" 
 
     - name: Upload filtered SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
