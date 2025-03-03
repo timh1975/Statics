@@ -49,10 +49,10 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
 
     - name: Filter SARIF file
-      run: sarif_filter codeql-sarif-results "python/example/goodbye" 
+      run: sarif_filter python.sarif "python/example/goodbye" 
 
     - name: Upload filtered SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
-        name: filtered-sarif-file
-        path: python.sarif
+       name: filtered-sarif-file
+       path: python.sarif.html
