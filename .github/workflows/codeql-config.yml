@@ -55,4 +55,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: filtered-sarif-file
-        path: python.sarif.html
+        path: python.sarif
