@@ -49,7 +49,7 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
 
     - name: Debug SARIF file path
-      run: ls -l results.sarif
+      run: ls -l results.sarif | pwd
 
     - name: Filter SARIF file
       run: sarif_filter python.sarif "python/example/goodbye" 
