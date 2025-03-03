@@ -53,12 +53,12 @@ jobs:
         echo "ls ${{ github.workspace }}/results.sarif"
 
     - name: Filter SARIF file
-      run: sarif_filter codeql-sarif-results  "" -o codeql-sarif-results
+      run: ${{ github.workspace }}/sarif_filter codeql-sarif-results
 
     - name: Upload filtered SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
         name: codeql-sarif-results 
-        path: results.sarif
+        path: ${{ github.workspace }}/sarif_filter codeql-sarif-results
 
         
