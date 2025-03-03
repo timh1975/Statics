@@ -53,10 +53,10 @@ jobs:
         echo "SARIF file path: ${{ github.workspace }}/results.sarif"
 
     - name: Filter SARIF file
-      run: sarif_filter filtered-sarif-file "GreenPython" 
+      run: sarif_filter codeql-sarif-results "GreenPython" 
 
     - name: Upload filtered SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
       with:
-        name: filtered-sarif-file
+        name: codeql-sarif-results
         path: results.sarif 
