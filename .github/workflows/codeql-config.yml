@@ -53,7 +53,7 @@ jobs:
       run: pip install -i https://test.pypi.org/simple/ sarif-filter
 
     - name: Filter SARIF file
-      run: sarif_filter python.sarif "test"
+      run: sarif_filter python.sarif
 
     - name: Upload filtered SARIF file as artifact (for download)
       uses: actions/upload-artifact@v4
